@@ -1,0 +1,45 @@
+<app-toolbar title="Home"></app-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-button class="ion-margin" (click)="newFood()">
+    <ion-icon slot="end" name="add">
+      
+    </ion-icon>
+    Food
+  </ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col><strong>ID</strong></ion-col>
+      <ion-col><strong>Nombre</strong></ion-col>
+      <ion-col><strong>Descripción</strong></ion-col>
+      <ion-col><strong>Precio</strong></ion-col>
+      <ion-col><strong>Acción</strong></ion-col>
+    </ion-row>
+
+    <ng-container *ngIf="listaFood.length > 0; else noData">
+      <ion-row *ngFor="let food of listaFood">
+        <ion-col>{{ food.id }}</ion-col>
+        <ion-col>{{ food.name }}</ion-col>
+        <ion-col>{{ food.description }}</ion-col>
+        <ion-col>{{ food.price }}</ion-col>
+        <ion-col>
+          <ion-button color="success">
+            <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+          </ion-button>
+          <ion-button color="danger">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+          <ion-button color="primary">
+            <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+    <ng-template #noData>
+      <ion-row>
+        <ion-col>No hay datos disponibles.</ion-col>
+      </ion-row>
+    </ng-template>
+  </ion-grid>
+</ion-content>

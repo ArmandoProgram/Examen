@@ -1,0 +1,14 @@
+<app-toolbar title="Country"></app-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-grid >
+    <ion-row>
+      @for (country of listaCountry; track country.idMeal) {
+        <ion-col sizeXs="6" sizeSm="3" sizeMd="3" sizeLg="2">
+ 
+          <app-card-country [countryInfo]="country"></app-card-country>
+        </ion-col>
+      } 
+    </ion-row>
+  </ion-grid>
+</ion-content>

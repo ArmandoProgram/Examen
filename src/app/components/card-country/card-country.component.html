@@ -1,0 +1,19 @@
+<ion-col size="12" size-md="4">
+  <ion-card class="country">
+  <ion-card-content>
+    <img class="img-country" [src]="countryInfo.strMealThumb">
+    <ion-card-header>
+      <p class="card-title">
+        {{countryInfo.strMeal}}
+      </p>
+      <ion-button color="success" (click)="openToast()" expand="block">
+        <ion-icon slot="start" name="cart-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="danger">
+        <ion-icon slot="end" name="heart" ></ion-icon>
+        Favorito
+      </ion-button>
+    </ion-card-header>
+  </ion-card-content>
+</ion-card>
+</ion-col>

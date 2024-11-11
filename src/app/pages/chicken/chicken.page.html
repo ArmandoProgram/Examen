@@ -1,0 +1,14 @@
+<app-toolbar title="Chicken"></app-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-grid >
+    <ion-row>
+      @for (chicken of listaChicken; track chicken.idMeal) {
+        <ion-col sizeXs="6" sizeSm="3" sizeMd="3" sizeLg="2">
+ 
+          <app-card-chicken [chickenInfo]="chicken"></app-card-chicken>
+        </ion-col>
+      } 
+    </ion-row>
+  </ion-grid>
+</ion-content>
